@@ -1,0 +1,487 @@
+<!DOCTYPE html5>
+<html >
+<head>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CARE FOR YOU</title>
+<link rel="icon" type="image/iconx" href="logo.png">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<link type="text/css" href="../public/stylesheets/bootstrap.css"/>
+<script src="../../../jquery-1.11.0.min.js" type="text/javascript"></script>
+
+<link href="../bootstrap/css/bootstrap.css" rel="stylesheet"  type="text/css" />
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="../../jquery-1.11.0.min.js"></script>
+<script src="//cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
+<script src="../bootstrap/js/bootstrap.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap-tagsinput.css">
+    
+<script src="file:///C|/Users/admin/Downloads/ckeditor_4.4.7_basic/ckeditor/ckeditor.js" type="text/javascript"> </script>
+</head>
+
+<body>
+<style>
+#top{
+  outline:solid;
+  outline-width:3px;
+  outline-color:#4496d2;  
+  padding:20px;
+}
+
+*{  
+font-size:18px;
+}
+#back-top {
+  position: fixed;
+  bottom: 30px;
+  
+}
+#back-top span {
+  /*display: block;*/
+  margin-bottom: 7px;  
+}
+  </style>
+  <script type="text/javascript"> 
+$(document).ready(function(){
+
+  // hide #back-top first
+  $("#back-top").hide();
+  
+  // fade in #back-top
+  $(function () {
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 100) {
+        $('#back-top').fadeIn();
+      } else {
+        $('#back-top').fadeOut();
+      }
+    });
+
+    // scroll body to 0px on click
+    $('#back-top a').click(function () {
+      $('body,html').animate({
+        scrollTop: 0
+      },500);
+      return false;
+    });
+  });
+
+});
+</script>
+
+<nav id="top" class="navbar navbar-default navbar-fixed-top ">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar" style="background-color:#4496d2"></span>
+        <span class="icon-bar" style="background-color:#4496d2"></span>
+        <span class="icon-bar" style="background-color:#4496d2"></span>
+      </button>
+      <a class="navbar-brand"  style="color:#4492d2;font-size:40px" id="col" href="home"><img src="images/logo4.png" alt="Care For You" width="227" height="56"/></a>
+    
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          
+      <form class="navbar-form navbar-nav" role="search">
+        <div class="form-group input-group">
+         <input style="color:#4492d2;"  type="text" class="form-control" placeholder="Search" >
+      
+    <span class="input-group-btn">    
+        <button class="btn btn-primary" type="submit">Go!</button>
+      </span>
+     </div>
+     <!--<button style="color:#4492d2;background-color:transparent;" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>-->
+        
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+       <li ><a style="color:#4492d2;" href="home">Home</a></li>
+        <li   ><a style="color:#4492d2;" href="diseases">Diseases</a></li>
+        <li><a style="color:#4492d2;" href="medicine" >Medicine</a></li>
+        <li class="active" ><a style="color:#4492d2;" href="forum">Forum</a></li>
+        <li><a style="color:#4492d2;" href="news">News</a></li>
+        <li ><a style="color:#4492d2;" href="doctor">Doctors</a></li>
+
+        <li  class="dropdown">
+          <a style="color:#4492d2;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a style="color:#4492d2;" href="#">Quiz</a></li>
+            <li style="color:#4492d2;" class="divider"></li>
+            <li><a style="color:#4492d2;" href="#">Details</a></li>
+            <li style="color:#4492d2;" class="divider"></li>
+            <li><a style="color:#4492d2;" href="#">About Us</a></li>
+            <li style="color:#4492d2;" class="divider"></li>
+            <li><a  style="color:#4492d2;" href="#">Got It</a></li>
+          </ul>
+        </li>
+        <% if(user) {%>
+        <li><a style="color:#4496d2;" href="/logout">Logout</a></li>
+        <%}else{%>
+        <li><a style="color:#4496d2;" href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+        <%}%>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<br><br><br><br>
+
+<!-- Button trigger modal -->
+
+<div class="container">
+  <div class="jumbotron" style="background-color:#000000;color:#ffffff">
+  <% if(user) {%>
+  <button type="button"  class="btn btn-info"  data-toggle="modal" data-target="#addquestion">
+  Add Question
+</button> 
+  <%}else { %>
+  <button type="button" class="btn btn-info"  data-toggle="modal" data-target="#add_question">Add Question</button>
+  <div class="modal fade" id="add_question" tabindex="-1" role="dialog" aria-labelledby="please signin" aria-hidden="true">
+  <div class="modal-dialog ">
+      <div class="modal-content ">
+        <div class="modal-header  bg-danger" >
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">
+                       &times;
+                </button>
+                <h4 class="modal-title" style="text-align:center;color:#4496d2">please <span><b><a style="color:red" data-dismiss="modal"data-toggle="modal" data-target="#login">Sign In</a></b></span>  first to add question</h4>
+        </div>
+        <!--<div class="modal-body ">
+                <p style="color:#000">if u want to login please click here <span><b><a data-dismiss="modal"data-toggle="modal" data-target="#login">Sign In</a></b></span> </p>
+      </div>
+      <div class="modal-footer ">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+      </div>
+      -->
+      </div>
+    </div>
+  </div>
+
+   <script type="text/javascript">
+  // $(document).ready(function(){
+  //   $("#add_question").click(function(){
+  //     alert("sorry please login ");
+  //     // bootbox.alert("sorry you are not signin", function() {
+  //     // Example.show("please <a href="#" data-toggle="modal" data-target="#login">login</a>");
+  //     // });
+  //   });
+  // });
+  // </script>
+  <%}%>
+  <h1 align="center">Forum</h1>
+  <p align="center"> welcome to forum</p>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="addquestion" tabindex="-1" role="dialog" aria-labelledby="addQuestion" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" align="center" style="color:#4496d2" id="myModalLabel">Add Question</h4>
+      </div>
+        <form action="/addquestion" method="POST">
+      <div class="modal-body form-group">
+      <label for="question">Question:</label>
+        <textarea class="form-control" placeholder="write Question from here.........." name="question" rows="5" required></textarea>
+        <label for="description">Description:</label>
+        <textarea class="form-control" placeholder="Question Description......" name="description" id="description" rows="5" required></textarea>
+        <script>
+                // Replace the <textarea id="description"> with a CKEditor
+                // instance, using default configuration.
+                var descriptions=CKEDITOR.replace( 'description' );
+
+        </script>
+        <label >tags:</label>
+<input type="text" name="tags" data-role="tagsinput" />
+
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Post Question</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<% if( Array.isArray(question) ) { %>
+<div class="container">
+  <%question.forEach( function( ques ){ %>
+
+  <div class="panel panel-info" >
+    <div class="panel-heading ">
+          <div class="row">
+            <div class="col-sm-8">
+              <p class="pull-left">username qId:<%= ques.qid %></p>
+              </div>
+                <div class="col-sm-4" >
+                  <ul class="list-inline pull-right" >
+                  <li><%= ques.date.toDateString()%></li>
+                    <li><%= ques.date.toLocaleTimeString()%></li>
+                </ul>
+                </div>
+             </div>       
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-12 ">
+                  question <%= ques.question %>
+                </div>
+                <div class="col-lg-12">
+                  <a class="description" data-toggle="collapse" href="" aria-expanded="false" aria-controls="forDescription"
+                    style="font-size:12px;text-decoration:none">read more <span style="font-size:10px">>></span></a>
+                  <div class="collapse show_description" id="">
+                    <div class="well">
+                    description:<%= ques.description %>   
+                    </div>
+                  </div>
+                </div> 
+            </div>        
+        </div>
+        <div class="panel-footer">
+        <a class="btn btn-primary answer" data-toggle="collapse" href="" aria-expanded="false" aria-controls=                                "forDescription">Add answer</a>
+        <div class="collapse write_answer" id="">
+            <div class="well">
+                <form action="/addanswer" method="post" >
+                              <div class="form-group">
+                                  <label for="answer">answer:</label>
+                        <textarea class="form-control" placeholder="write answer from here.........." id="answer" name="answer" rows="5" ></textarea>
+        
+                                </div>
+                                <button type="submit" class="btn btn-primary">Post Answer</button>
+                                <button type="reset" class="btn btn-danger">clear</button>
+                    
+                            </form>
+                                    
+            </div>
+        </div>
+        </div>    
+  </div> 
+    <% })} %>   
+<script type="text/javascript">
+              var descriptionele=document.querySelectorAll('.description')
+              var showDescriptionele=document.querySelectorAll('.show_description');
+              var answerele=document.querySelectorAll('.answer');
+              var writeAnswerele=document.querySelectorAll('.write_answer');
+              var forIdele=document.querySelectorAll('.try');
+                for(var i=0;i<=descriptionele.length;i++)
+                {
+                  descriptionele[i].href="#d"+i+1;
+                  showDescriptionele[i].id="d"+i+1;
+                  answerele[i].href="#q"+i+1;
+                  writeAnswerele[i].id="q"+i+1;
+                  
+                 // forIdele[i].id="q"+i+1;
+                 forIdele[i].name="q"+i+1;
+                 forIdele[i].value="q"+i+1;
+                 
+                }
+                // for(var i=0;i<=answerele.length;i++)
+                // {
+                //   //document.getElementById(forIdele[i].id).innerHtml="q"+i+1;
+                //   answerele[i].href="#q"+i+1;
+                //   writeAnswerele[i].id="q"+i+1;
+                  
+                //  // forIdele[i].id="q"+i+1;
+                //  forIdele[i].name="q"+i+1;
+                //  forIdele[i].value="q"+i+1;
+                 
+                // }
+                // $(document).ready(function(){
+                //   $('.common').click(function(){
+                //     var questionid=this.id;
+                //     alert(this.id+" "+this.name);
+                //   });
+                // });  
+        </script>
+</div>
+
+<style type="text/css">
+  div div div ul li a{
+    color:#3b91b5;
+    font-size: 14px;
+  }
+  div div div ul li a span.glyphicon{
+    font-size: 0.6em;
+  }
+  .navbar-bottom{
+    background-color: #212c37;
+  }
+  </style>
+<nav  class="navbar navbar-default navbar-bottom">
+
+  <div class="container" >
+  <div class="row">
+    <div class="col-sm-4">
+    <ul>
+      <h3 style="color:white" >About Us </h3>
+      <li style="display:block"><a href="#"  title="Team"><span class="glyphicon glyphicon-triangle-right"></span>Team</a></li><br>
+      <li style="display:block"><a href="#" title=""><span class="glyphicon glyphicon-triangle-right"></span>At a Glance</a></li><br>
+      <li style="display:block"><a href="#" title=""><span class="glyphicon glyphicon-triangle-right"></span>Privacy Policy</a></li><br>
+      <li style="display:block"><a href="#" title=""><span class="glyphicon glyphicon-triangle-right"></span>FeedBack</a></li>
+    </ul>
+    </div>  
+    <div class="col-sm-4">
+    <ul >
+       <h3  style="color:white">Links</h3>  
+        <li style="display:block"><a href="" title="Diseases"><span class="glyphicon glyphicon-triangle-right"></span>Diseases</a></li><br>
+         <li style="display:block"><a href="medicine" title="Medicines"><span class="glyphicon glyphicon-triangle-right"></span>Medicines</a></li><br>
+        <li style="display:block"><a href="forum" title="Forum"><span class="glyphicon glyphicon-triangle-right"></span>Forum</a></li><br>
+        <li style="display:block"><a href="news" title="News"><span class="glyphicon glyphicon-triangle-right"></span>News</a></li><br>
+        <li style="display:block"><a href="doctor" title="Doctor"><span class="glyphicon glyphicon-triangle-right"></span>Doctors</a></li>
+        
+      </ul>
+    </div>
+   
+    <div class="col-sm-4">
+    <ul>
+      <h3 style="color:white">Contact Us</h3>
+      <li style="display:block">
+        <address style="color:#a2dcf4; font-size:14px">
+          <span style="font-size:1em" class="glyphicon glyphicon-map-marker"></span><strong style="font-size:14px">Address: </strong>Shshsh, Inc.<br>
+          123 abc, xyz 600<br>
+          Dkjdkd jdkjskf, indore 452005<br>
+        </address>
+      </li>
+      <li style="display:block">
+        <address style="color:#a2dcf4; font-size:14px">
+          <span style="font-size:1em" class="glyphicon glyphicon-envelope"></span><strong style="font-size:14px"> Email: </strong><a href="mailto:shubhampatwa526@gmail.com">shshsh@gmail.com</a>
+        </address>
+      </li>
+      <li style="display:block">
+        <address style="color:#a2dcf4; font-size:14px">
+          <span style="font-size:1em" class="glyphicon glyphicon-phone-alt"></span><strong style="font-size:14px"> Phone: </strong> (123) 456-7890
+        </address>
+      </li>
+      <li style="display:inline"><strong style="font-size:14px; color:#a2dcf4"> Follow us: </strong></li>
+        <li style="display:inline"><a href="#" title="facebook"><img   class="" src="images/fbicon1.png" onmouseover="this.src='images/fbicon2.png'" onmouseout="this.src='images/fbicon1.png'"></a></li>
+         <li style="display:inline"><a href="#" title="twitter"><img class="" src="images/twicon1.png" onmouseover="this.src='images/twicon2.png'" onmouseout="this.src='images/twicon1.png'"></a></li>
+        <li style="display:inline"><a href="#" title="linkedin"><img class="" src="images/liicon1.png" onmouseover="this.src='images/liicon2.png'" onmouseout="this.src='images/liicon1.png'"></a></li>
+        <li style="display:inline"><a href="#" title="google+"><img class="" src="images/goicon1.png" alt="g+" onmouseover="this.src='images/goicon2.png'" onmouseout="this.src='images/goicon1.png'"></a></li>
+      
+    </ul>
+
+  </div>
+  </div>
+  <div class="row">
+  <blockquote class="blockquote col-sm-6" style="color:white">
+  <p><span class="glyphicon glyphicon-pencil"></span> Created By: </p>
+  <footer><cite title="Sharlet Shivani Shubham">Shshsh Organization</cite></footer>
+</blockquote>
+  <blockquote class="blockquote-reverse col-sm-6" style="color:white">
+  <p><span class="glyphicon glyphicon-copyright-mark"></span> Copyright 2015.All Right Reserved. </p>
+  <footer>by<cite title="Sharlet Shivani Shubham">Shshsh Organization</cite></footer>
+</blockquote>
+  </div>
+  </div>
+</nav>
+
+<p id="back-top">
+    <a class="pull-right" href="#top"><span aria-hidden="true"><img class="img-circle pull-right" alt="back-to-top" title="back to top" src="images/up-arrow.png"></span></a>
+  </p>
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login/signin" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" >
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">
+                       &times;
+                </button>
+                <h1 class="modal-title" style="text-align:center;color:#4496d2"id="Login"><strong>Login</strong></h1>
+        </div>
+         <form method="POST" action="/login">
+        <div class="modal-body">
+               
+          <div class="form-group">
+            <label for="user-name" class="control-label">UserName:</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="UserName" required>
+          </div>
+          <div class="form-group">
+            <label for="password" class="control-label">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+          </div>
+        
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Log In</button>
+        <a  href="/forgot" class="btn btn-link" >forgot password?</a>
+      </div>
+      </form>
+      <hr style="color:#4496d2">
+      <div >
+      <p style="text-align:center">Don't have an account? <a data-toggle="modal" data-target="#signup" data-dismiss="modal"><strong>Sign Up</strong></a></p>
+    </div>
+
+        </div>
+      </div>
+  </div>
+  
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signup" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h1 class="modal-title" style="text-align:center;color:#4496d2" id="exampleModalLabel"><strong>Sign Up</strong></h1>
+      </div>
+       <form action="/User" method="POST">
+      <div class="modal-body">
+       
+          <div class="form-group">
+            <label for="user-name" class="control-label">UserName:</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="Email" class="control-label">Email:</label>
+            <input type="email" name="email"class="form-control" id="email" required>
+          </div>
+          
+
+          <div class="form-group">
+            <label for="message-text" class="control-label">Password:</label>
+            <input type="password" name="password"class="form-control" id="password" required>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Confirm-Password:</label>
+            <input type="password" name="cpassword"class="form-control" id="confirmpassword" required>
+          </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="close" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </div>
+    </form>    
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="../Downloads/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="../Downloads/bootstrap-tagsinput/bootstrap-tagsinput-angular.min.js"></script>
+    <script src="file:///E|/project/bootstrap/bootstrap/js/bootstrap.min.js"></script>
+    <script src="file:///E|/project/jquery-1.11.0.min.js"></script>
+<script>
+document.getElementById("demo").innerHTML =$("input").val();
+var tags=$("input").val();
+$("input").tagsinput('items');
+document.write(items);
+</script>
+
+
+</body>
+</html>

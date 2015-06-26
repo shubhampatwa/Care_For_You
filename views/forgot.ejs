@@ -1,0 +1,46 @@
+<!DOCTYPE html5>
+<html >
+<head>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forgot|CARE FOR YOU</title>
+<link rel="icon" type="image/iconx" href="images/logo.png">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link type="text/css" href="../public/stylesheets/bootstrap.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="//cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
+<script type="text/javascript" src="../public/javascripts/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container">
+	<% if(messages.error){%>
+  <div class="alert alert-danger">
+  	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  	<span aria-hidden="true">&times;</span>
+	</button>
+	<%=messages.error%></div>
+  <%}%>
+  <% if(messages.info){%>
+  	<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  	<span aria-hidden="true">&times;</span>
+	</button><%=messages.info%></div>
+  <%}%>
+  <% if(messages.success){%>
+  <div class="alert alert-success"><button type="button" class="close" data-dismiss="alert"   aria-label="Close">
+  	<span aria-hidden="true">&times;</span>
+	</button><%=messages.success%></div>
+  <%}%>
+  
+	<form method="POST" action="/forgot">
+	<legend>Forget Password</legend>
+		<div class="form-group">
+			<label for="email">@Email:</label>
+			<input type="email" class="form-control" name="email" autofocus=true required>
+		</div>
+		<button type="submit" class="btn btn-primary">Reset Password</button>
+		
+	</form>
+	</div>
+</body>
+</html>

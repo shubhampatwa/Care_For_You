@@ -1,0 +1,387 @@
+<!DOCTYPE html5>
+<html >
+<head>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CARE FOR YOU</title>
+<link rel="icon" type="image/iconx" href="logo.png">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link type="text/css" href="../public/stylesheets/bootstrap.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<link href="../bootstrap/css/bootstrap.css" rel="stylesheet"  type="text/css" />
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="../../jquery-1.11.0.min.js"></script>
+<script src="//cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
+<script src="../bootstrap/js/bootstrap.js" type="text/javascript"></script>
+<script src="file:///C|/Users/admin/Downloads/ckeditor_4.4.7_basic/ckeditor/ckeditor.js" type="text/javascript"> </script>
+</head>
+
+<body>
+<style>
+#top{
+  outline:solid;
+  outline-width:3px;
+  outline-color:#4496d2;  
+  padding:20px;
+}
+
+*{  
+font-size:18px;
+}
+</style>
+
+<nav id="top" class="navbar navbar-default navbar-fixed-top ">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar" style="background-color:#4496d2"></span>
+        <span class="icon-bar" style="background-color:#4496d2"></span>
+        <span class="icon-bar" style="background-color:#4496d2"></span>
+      </button>
+      <a class="navbar-brand"  style="color:#4492d2;font-size:40px" id="col" href="home"><img src="images/logo4.png" alt="Care For You" width="227" height="56"/></a>
+    
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          
+      <form class="navbar-form navbar-nav" role="search">
+        <div class="form-group input-group">
+         <input style="color:#4492d2;"  type="text" class="form-control" placeholder="Search" >
+      
+    <span class="input-group-btn">    
+        <button class="btn btn-primary" type="submit">Go!</button>
+      </span>
+     </div>
+     <!--<button style="color:#4492d2;background-color:transparent;" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>-->
+        
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+       <li ><a style="color:#4492d2;" href="home">Home</a></li>
+        <li   ><a style="color:#4492d2;" href="diseases">Diseases</a></li>
+        <li><a style="color:#4492d2;" href="medicine" >Medicine</a></li>
+        <li class="active" ><a style="color:#4492d2;" href="forum">Forum</a></li>
+        <li><a style="color:#4492d2;" href="news">News</a></li>
+        <li ><a style="color:#4492d2;" href="doctor">Doctors</a></li>
+
+        <li  class="dropdown">
+          <a style="color:#4492d2;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a style="color:#4492d2;" href="#">Quiz</a></li>
+            <li style="color:#4492d2;" class="divider"></li>
+            <li><a style="color:#4492d2;" href="#">Details</a></li>
+            <li style="color:#4492d2;" class="divider"></li>
+            <li><a style="color:#4492d2;" href="#">About Us</a></li>
+            <li style="color:#4492d2;" class="divider"></li>
+            <li><a  style="color:#4492d2;" href="#">Got It</a></li>
+          </ul>
+        </li>
+        <% if(user) {%>
+        <li><a style="color:#4496d2;" href="/logout">Logout</a></li>
+        <%}else{%>
+        <li><a style="color:#4496d2;" href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+        <%}%>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<br><br><br><br>
+
+<!-- Button trigger modal -->
+
+<div class="container">
+  <div class="jumbotron" style="background-color:#000000;color:#ffffff">
+  <% if(user) {%>
+  <button type="button"  class="btn btn-info"  data-toggle="modal" data-target="#addquestion">
+  Add Question
+</button> 
+  <%}else { %>
+  <button type="button" class="btn btn-info"  data-toggle="modal" data-target="#add_question">Add Question</button>
+  <div class="modal fade" id="add_question" tabindex="-1" role="dialog" aria-labelledby="please signin" aria-hidden="true">
+  <div class="modal-dialog ">
+      <div class="modal-content ">
+        <div class="modal-header  bg-danger" >
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">
+                       &times;
+                </button>
+                <h4 class="modal-title" style="text-align:center;color:#4496d2">please <span><b><a style="color:red" data-dismiss="modal"data-toggle="modal" data-target="#login">Sign In</a></b></span>  first to add question</h4>
+        </div>
+        <!--<div class="modal-body ">
+                <p style="color:#000">if u want to login please click here <span><b><a data-dismiss="modal"data-toggle="modal" data-target="#login">Sign In</a></b></span> </p>
+      </div>
+      <div class="modal-footer ">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+      </div>
+      -->
+      </div>
+    </div>
+  </div>
+
+   <script type="text/javascript">
+  // $(document).ready(function(){
+  //   $("#add_question").click(function(){
+  //     alert("sorry please login ");
+  //     // bootbox.alert("sorry you are not signin", function() {
+  //     // Example.show("please <a href="#" data-toggle="modal" data-target="#login">login</a>");
+  //     // });
+  //   });
+  // });
+  // </script>
+  <%}%>
+  <h1 align="center">Forum</h1>
+  <p align="center"> welcome to forum</p>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="addquestion" tabindex="-1" role="dialog" aria-labelledby="addQuestion" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" align="center" style="color:#4496d2" id="myModalLabel">Add Question</h4>
+      </div>
+        <form action="/addquestion" method="POST">
+      <div class="modal-body form-group">
+      <label for="question">Question:</label>
+        <textarea class="form-control" placeholder="write Question from here.........." name="question" rows="5" ></textarea>
+        <label for="description">Description:</label>
+        <textarea class="form-control" placeholder="Question Description......" name="description" id="description" rows="5" ></textarea>
+        <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'description' );
+        </script>
+        <label for="tags">tags:</label>
+        <input type="text" name="tags" />
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Post Question</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<% if( Array.isArray(question) ) { %>
+<div class="container">
+
+  <%question.forEach( function( ques ){ %>
+  <div class="panel panel-info" >
+  
+
+    <div class="panel-heading ">
+          <div class="row">
+            <div class="col-sm-8">
+              <p class="pull-left"><h4>username qId:<%= ques.qid %></h4></p>
+              </div>
+                <div class="col-sm-4" >
+                  <ul class="list-inline pull-right" >
+                  <li><%= ques.date.toDateString()%></li>
+                    <li><%= ques.date.toLocaleTimeString()%></li>
+                </ul>
+                </div>
+             </div>       
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-12">
+                   question:<%= ques.question %>
+            </div>
+            <div class="col-lg-12">
+              <a class="" style="font-size:15px;text-decoration:none" data-toggle="collapse" href="#descrip" aria-expanded="false" aria-controls="forDescription">Read more</a>
+        <div class="collapse" id="descrip">
+            <div class="well">
+                description:<%= ques.description %>                     
+            </div>
+        </div>        
+            </div> 
+          </div>
+           
+        </div>
+        <div class="panel-footer">
+        <a class="btn btn-primary" data-toggle="collapse" href="#answer" aria-expanded="false" aria-controls=        "forAnswer">Add answer</a>
+        <div class="collapse" id="answer">
+            <div class="well">
+                <form action="/addanswer" method="post" >
+                              <div class="form-group">
+                                  <label for="answer">answer:</label>
+                        <textarea class="form-control" placeholder="write answer from here.........." id="answer" name="answer" rows="5" ></textarea>
+        
+                                </div>
+                                <button type="submit" class="btn btn-primary">Post Answer</button>
+                                <button type="reset" class="btn btn-danger">clear</button>
+                    
+                            </form>
+                                    
+            </div>
+        </div>
+        </div>    
+  </div>
+  <% }) }%>   
+</div>
+
+
+<nav style="background-color:#212c37" class="navbar navbar-default navbar-bottom">
+<style type="text/css">
+  div div div ul li a{
+    color:#a2dcf4;
+    font-size: 14px;
+  }
+  div div div ul li a span.glyphicon{
+    font-size: 0.6em;
+  }
+  </style>
+  <div class="container" >
+  <div class="row">
+    <div class="col-sm-3">
+    <h3 style="color:#ffffff" >About Us </h3>
+      <ul style="display:block;" >
+        <li style="display:block"><a href="#"  title="Team"><span class="glyphicon glyphicon-triangle-right"></span>Team</a></li>
+         <li style="display:block"><a href="#" title=""><span class="glyphicon glyphicon-triangle-right"></span>At a Glance</a></li>
+        <li style="display:block"><a href="#" title=""><span class="glyphicon glyphicon-triangle-right"></span>Privacy Policy</a></li>
+        <li style="display:block"><a href="#" title=""><span class="glyphicon glyphicon-triangle-right"></span>Contact Us</a></li>
+        <li style="display:block"><a href="#" title=""><span class="glyphicon glyphicon-triangle-right"></span>FeedBack</a></li>
+        
+      </ul>
+    </div>  
+    <div class="col-sm-3">
+    <ul >
+       <h3  style="color:white">Links</h3>  
+        <li style="display:block"><a href="diseases.html" title="Diseases"><span class="glyphicon glyphicon-triangle-right"></span>Diseases</a></li>
+         <li style="display:block"><a href="medicines.html" title="Medicines"><span class="glyphicon glyphicon-triangle-right"></span>Medicines</a></li>
+        <li style="display:block"><a href="forum.html" title="Forum"><span class="glyphicon glyphicon-triangle-right"></span>Forum</a></li>
+        <li style="display:block"><a href="news.html" title="News"><span class="glyphicon glyphicon-triangle-right"></span>News</a></li>
+        <li style="display:block"><a href="doctor.html" title="Doctor"><span class="glyphicon glyphicon-triangle-right"></span>Doctors</a></li>
+        
+      </ul>
+    </div>
+    <style>
+    ul li a img{ opacity:0.6;
+    }
+      ul li a img:hover{
+    opacity:1.0;
+    
+    }
+      </style>
+    <div class="col-sm-3">
+    <h3 align="center" style="color:#ffffff">Follow us on -</h3>
+    <ul >
+        <li style="display:inline"><a href="#" title="facebook"><img   class="" src="images/facebook2.png"></a></li>
+         <li style="display:inline"><a href="#" title="twitter"><img class="" src="images/twitter1.png"></a></li>
+        <li style="display:inline"><a href="#" title="instagarm"><img class="" src="images/instagram1.png"></a></li>
+        <li style="display:inline"><a href="#" title="linkelin"><img class="" src="images/linkedin1.png"></a></li>
+        <li style="display:inline"><a href="#" title="google+"><img class="" src="images/google1.png" alt="g+"></a></li>
+        
+      </ul></div>
+    <div class="col-sm-3" style="color:white">
+        <address>
+  <strong>Shshsh, Inc.</strong><br>
+  123 abc, xyz 600<br>
+  Dkjdkd jdkjskf, indore 452005<br>
+  <abbr title="Phone">P:</abbr> (123) 456-7890
+</address>
+
+<address>
+  <strong>Full Name</strong><br>
+  <a href="mailto:#">shshsh@shshsh.com</a>
+</address>
+  </div>
+  </div>
+  <div class="row">
+  <blockquote class="blockquote col-sm-6" style="color:white">
+  <p><span class="glyphicon glyphicon-pencil"></span> Created By: </p>
+  <footer><cite title="Sharlet Shivani Shubham">Shshsh Organization</cite></footer>
+</blockquote>
+  <blockquote class="blockquote-reverse col-sm-6" style="color:white">
+  <p><span class="glyphicon glyphicon-copyright-mark"></span> Copyright 2015.All Right Reserved. </p>
+  <footer>by<cite title="Sharlet Shivani Shubham">Shshsh Organization</cite></footer>
+</blockquote>
+  </div>
+  </div>
+</nav>
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login/signin" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" >
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">
+                       &times;
+                </button>
+                <h1 class="modal-title" style="text-align:center;color:#4496d2"id="Login"><strong>Login</strong></h1>
+        </div>
+        <div class="modal-body">
+                <form>
+          <div class="form-group">
+            <label for="user-name" class="control-label">UserName:</label>
+            <input type="text" class="form-control" id="username" placeholder="UserName">
+          </div>
+          <div class="form-group">
+            <label for="password" class="control-label">Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Log In</button>
+      </div>
+      <hr style="color:#4496d2">
+      <div >
+      <p style="text-align:center">Don't have an account? <a data-toggle="modal" data-target="#signup" data-dismiss="modal"><strong>Sign Up</strong></a></p>
+    </div>
+
+        </div>
+      </div>
+  </div>
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signup" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h1 class="modal-title" style="text-align:center;color:#4496d2" id="exampleModalLabel"><strong>Sign Up</strong></h1>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="user-name" class="control-label">UserName:</label>
+            <input type="text" class="form-control" id="username">
+          </div>
+          <div class="form-group">
+            <label for="first-name" class="control-label">FirstName:</label>
+            <input type="text" class="form-control" id="firstname">
+          </div>
+          <div class="form-group">
+            <label for="last-name" class="control-label">LastName:</label>
+            <input type="text" class="form-control" id="lastname">
+          </div>
+
+
+          <div class="form-group">
+            <label for="message-text" class="control-label">Password:</label>
+            <input type="password" class="form-control" id="password"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Confirm-Password:</label>
+            <input type="password" class="form-control" id="confirmpassword"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onclick</title>
+</head>
+<body>
+<button id="shubh">click</button>
+<script src="../../../jquery-1.11.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#shubh').click(function(){
+			var s=this.id;
+			alert(s);
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	
+	
+		$('#check').click(function(){
+			if(p!=cp){
+				alert(p);
+				return false;
+			}
+			alet(this.id);
+		});
+	});
+	function validate()
+	{
+		var p=form.p.value;
+		var cp=form.cp.value;
+		alert(this.id);
+		if(p!=cp)alert("plz enter confirm pwd as password");
+		return false;
+	}
+</script>
+<form action="/go" method="post">
+<input type="password" name="p"placeholder="pwd" required>
+<input type="password" name="cp" placeholder="confirm pwd" required>
+<button type="submit" id="check" onsubmit="return validate()">check</button>
+</form>
+</body>
+</html>

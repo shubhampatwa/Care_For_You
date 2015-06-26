@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>assignment 22</title>
+<style type="text/css">
+<!--
+#form1 table tr td h1 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+body {
+	background-color: #FFF;
+}
+body,td,th {
+	color: #000;
+}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="10">
+<body>
+
+<form id="form1" name="form1" method="" action="connect">
+  <table width="336" border="2" align="left" cellpadding="2" cellspacing="0"  bgcolor="#CCCCCC">
+  <tr>
+  <th colspan="2" align="center" bgcolor="#3366CC"><h1><strong>Registration Page</strong></h1></th></tr>
+  
+    <tr>
+      <td width="174">Name :-</td>
+      <td width="146"><input type="text" name="uid" id="uid" />  </td>
+    </tr>
+    <tr>
+      <td>Age :-</td>
+      <td><input type="text" name="age" id="age" /></td>
+    </tr>
+    <tr>
+      <td>Address :-</td>
+      <td><input type="text" name="add" id="add" /></td>
+    </tr>
+    <tr>
+      <td>Phone no. :-</td>
+      <td><input type="text" name="no" id="no" /></td>
+    </tr>
+    <tr>
+      <td>User Name :-</td>
+      <td><input type="text" name="id" id="id" /></td>
+    </tr>
+    <tr>
+      <td>Password :-</td>
+      <td><input type="password" name="pwd" id="pwd" /></td>
+    </tr>
+    <tr>
+      <td>Confirm password:-</td>
+      <td><input type="password" name="cpwd" id="cpwd" /></td>
+    </tr>
+    <tr>
+      <td colspan=2>&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="login" id="login" value="Register" onclick="logincode()"  />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" name="reset" id="reset" value="Clear" /></td>
+      
+    </tr>
+  </table>
+</form>
+
+<script>
+function logincode()
+{
+if(form1.uid.value==0)
+alert("name is required");
+if(form1.age.value==0)
+alert("age is reqired");
+if(form1.age.value<18 || form1.age.value>64) 
+alert("age must between 18 to 64");
+if(form1.add.value==0)
+alert("address is required");
+if(form1.pwd.value==0)
+alert("password is required");
+if(form1.cpwd.value==0)
+alert("confirmation of password is required");
+if(form1.pwd.value!=form1.cpwd.value)
+{
+alert("plz confirm password again");
+form1.pwd.value=null;
+form1.cpwd.value=null;
+}
+}
+</script>
+
+</body>
+</html>

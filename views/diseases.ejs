@@ -1,0 +1,582 @@
+<!DOCTYPE html5>
+<html >
+<head>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diseases|CARE FOR YOU</title>
+<link rel="icon" type="image/iconx" href="images/logo.png">
+<link href="../bootstrap/css/bootstrap.css" rel="stylesheet"  type="text/css" />
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="../../jquery-1.11.0.min.js"></script>
+<script src="../bootstrap/js/bootstrap.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+<style>
+nav{
+	background-color:transparent;
+	outline:solid;
+	outline-width:3px;
+	outline-color:#4496d2;	
+}
+#top{
+	padding:20px;
+}
+
+*{	
+font-size:18px;
+}
+#back-top {
+  position: fixed;
+  bottom: 30px;
+  
+}
+#back-top span {
+  /*display: block;*/
+  margin-bottom: 7px;
+    
+}
+</style>
+<script type="text/javascript"> 
+$(document).ready(function(){
+
+  // hide #back-top first
+  $("#back-top").hide();
+  
+  // fade in #back-top
+  $(function () {
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 100) {
+        $('#back-top').fadeIn();
+      } else {
+        $('#back-top').fadeOut();
+      }
+    });
+
+    // scroll body to 0px on click
+    $('#back-top a').click(function () {
+      $('body,html').animate({
+        scrollTop: 0
+      },500);
+      return false;
+    });
+  });
+
+});
+</script>
+<script type="text/javascript">
+  $(document).ready(function() {    
+  $('#category li').click(function(){
+    $(this).siblings('li').removeClass('active');
+   // $('#amed').removeClass('active');
+  $(this).addClass('active');
+  //$(this).css("background-color","#4496d2");
+  });
+  });
+</script>
+
+<nav id="top" class="navbar navbar-default navbar-fixed-top ">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar" style="background-color:#4496d2"></span>
+        <span class="icon-bar" style="background-color:#4496d2"></span>
+        <span class="icon-bar" style="background-color:#4496d2"></span>
+      </button>
+      <a class="navbar-brand"  style="color:#4492d2;font-size:40px" id="col" href="home"><img src="images/logo1.png" alt="Care For You"/></a>
+    
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          
+      <form class="navbar-form navbar-nav" role="search">
+        <div class="form-group input-group">
+         <input style="color:#4492d2;"  type="text" class="form-control" placeholder="Search" >
+      
+    <span class="input-group-btn">    
+        <button class="btn btn-primary" type="submit">Go!</button>
+      </span>
+     </div>
+      
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a style="color:#4492d2;" href="home">Home</a></li>
+        <li  class="active"><a style="color:#4492d2;" href="">Diseases</a></li>
+        <li><a style="color:#4492d2;" href="medicine">Medicines</a></li>
+        <li><a style="color:#4492d2;" href="forum">Forum</a></li>
+        <li><a style="color:#4492d2;" href="news">News</a></li>
+        <li><a style="color:#4492d2;" href="doctor">Doctors</a></li>
+        
+        <li  class="dropdown">
+          <a style="color:#4492d2;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a style="color:#4492d2;" href="#">Quiz</a></li>
+            <li style="color:#4492d2;" class="divider"></li>
+            <li><a style="color:#4492d2;" href="#">Articles</a></li>
+            <li style="color:#4492d2;" class="divider"></li>
+            <li><a style="color:#4492d2;" href="#">About Us</a></li>
+          </ul>
+        </li>
+        <% if(user) {%>
+        <li><a style="color:#4496d2;" href="/logout">Logout</a></li>
+        <%}else{%>
+        <li><a style="color:#4496d2;" href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+        <%}%>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<br><br><br>
+
+<div class="container">
+  <div class="jumbotron" style="background-image:url(images/diseases3.png); background-size:cover">
+    <h2 style="color:" align="center">HUMAN DISEASES</h2>
+    <p align="center"><b>Click on any disease</b></p>
+    <ul id="category" class="nav nav-pills">
+      <li role="presentation" class="active"><a href="#adis">A</a></li>
+      <li role="presentation" ><a href="#bdis">B</a></li>
+      <li role="presentation" ><a href="#cdis">C</a></li>
+      <li role="presentation"><a href="#ddis">D</a></li>
+      <li role="presentation"><a href="#edis">E</a></li>
+      <li role="presentation"><a href="#">F</a></li>
+      <li role="presentation"><a href="#">G</a></li>
+      <li role="presentation"><a href="#">H</a></li>
+      <li role="presentation"><a href="#">I</a></li>
+      <li role="presentation"><a href="#">J</a></li>
+      <li role="presentation"><a href="#">K</a></li>
+      <li role="presentation"><a href="#">L</a></li>
+      <li role="presentation"><a href="#">M</a></li>
+      <li role="presentation"><a href="#">N</a></li>
+      <li role="presentation"><a href="#">O</a></li>
+      <li role="presentation"><a href="#">P</a></li>
+      <li role="presentation"><a href="#">Q</a></li>
+      <li role="presentation"><a href="#">R</a></li>
+      <li role="presentation"><a href="#">S</a></li>
+      <li role="presentation"><a href="#">T</a></li>
+      <li role="presentation"><a href="#">U</a></li>
+      <li role="presentation"><a href="#">V</a></li>
+      <li role="presentation"><a href="#">W</a></li>
+      <li role="presentation"><a href="#">X</a></li>
+      <li role="presentation"><a href="#">Y</a></li>
+      <li role="presentation"><a href="#">Z</a></li>
+    </ul>
+  </div>
+  <table class="table table-hover">
+    <thead >
+    	<tr class="bg-primary">
+        <th>Name of the disease</th>
+      </tr>
+    </thead>
+    <tbody>
+    	<tr id="adis">
+      </tr>
+      <tr class="success" data-toggle="collapse" data-target="#asthma">
+        <td>Asthma</td>
+      </tr>
+      <tr>
+        <td colspan="5">
+          <div class="collapse" id="asthma">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+            <div class="panel-heading" align="center" style="background-color:#41a9d7; color:#ffffff">Asthma
+            </div>
+            <br>
+            <div role="tabpanel" style="margin-left:10px">
+              <ul id="ulasthma" class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#about1" id="about1-tab" role="tab" data-toggle="tab" aria-controls="about1" aria-expanded="true">ABOUT</a></li>
+                <li role="presentation"><a href="#causes1" id="causes1-tab" role="tab" data-toggle="tab" aria-controls="causes1" aria-expanded="true">CAUSES</a></li>
+                <li role="presentation"><a href="#symptoms1" id="symptoms1-tab" role="tab" data-toggle="tab" aria-controls="symptoms1" aria-expanded="true">SYMPTOMS</a></li>
+               <li role="presentation"><a href="#prevention1" id="prevention1-tab" role="tab" data-toggle="tab" aria-controls="prevention1" aria-expanded="true">PREVENTION</a></li>
+              </ul>
+              <br>
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="about1" aria-labelledBy="about1-tab">
+               The most commonly discussed respiratory disease after the common cold.
+             An asthma attack leads to lung infection, tiredness, cough and breathing difficulties.The attack can be seasonal when the pollen count is high in the atmosphere.  
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="causes1" aria-labelledBy="causes1-tab">
+             Allergens, Infections, environmental pollutants or non-specific stimuli such as exercise and emotional states. <br><br> Between 50 and 70 per cent of adults with asthma suffer from allergies. <br><br>In children under three years of age, viral infections are likely to be the most common trigger. After three years, allergies also begin to play an increasing role as a trigger.  <br><br>After 20 years of age, occupational exposure to toxic substances and allergens also can be important triggers for asthma. <br><br>
+                  <img class="img-responsive" src="images/asthma.png" align="center"><br> <br>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="symptoms1" aria-labelledBy="symptoms1-tab">
+                  <img class="img-responsive" src="images/asthma1.png" align="center"><br> <br>
+             Asthma is a condition in which the airways of the lungs become either narrowed or completely blocked, obstructing normal breathing.<br><br>Coughing, especially at night, during exercise or when laughing.<br><br>Chest tightness.<br><br>
+             Wheezing (a whistling or squeaky sound in your chest when you breathe, especially when exhaling)<br><br>
+             Any asthma symptom is serious and can become deadly if left untreated.
+                  <br><br>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="prevention1" aria-labelledBy="prevention1-tab">
+                  <img class="img-responsive" src="images/asthma2.png" align="center"><br> <br>
+             During an acute attack of Asthma the following should be done:
+             <br> <br>
+              Always keep your blue inhaler with you.<br> <br>
+             Take a puff from the inhaler.<br> <br>
+             Loosen any tight clothing and sit-up.<br> <br>
+             Open the windows of the room if room is warm and humid.<br> <br>
+             If no immediate improvement felt during an attack, continue to take one puff of inhaler every minute for 3 to 5 minutes or until symptoms improve.<br> <br>
+             If your symptoms do not improve in five minutes or if you are in   doubt, call your doctor or visit the nearest hospital.<br> <br>
+              <b>Long-term treatment strategies:</b><br> <br>
+             Controlling the environmental factors<br> <br>
+              Controlling asthma attacks by taking regular medications<br> <br>
+              Monitoring Lung Function regularly<br> <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+           
+		<tr id="bdis">
+    </tr>
+    <tr class="success" data-toggle="collapse" data-target="#backpain">
+      <td>Back Pain</td>
+    </tr>
+    <tr>
+        <td colspan="5">
+          <div class="collapse" id="backpain">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+            <div class="panel-heading" align="center" style="background-color:#41a9d7; color:#ffffff">Back Pain
+            </div>
+            <br>
+            <div role="tabpanel" style="margin-left:10px">
+              <ul id="ulasthma" class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#about2" id="about2-tab" role="tab" data-toggle="tab" aria-controls="about2" aria-expanded="true">ABOUT</a></li>
+                <li role="presentation"><a href="#causes2" id="causes2-tab" role="tab" data-toggle="tab" aria-controls="causes2" aria-expanded="true">CAUSES</a></li>
+                <li role="presentation"><a href="#symptoms2" id="symptoms2-tab" role="tab" data-toggle="tab" aria-controls="symptoms2" aria-expanded="true">SYMPTOMS</a></li>
+               <li role="presentation"><a href="#prevention2" id="prevention2-tab" role="tab" data-toggle="tab" aria-controls="prevention2" aria-expanded="true">PREVENTION</a></li>
+              </ul>
+              <br>
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="about2" aria-labelledBy="about2-tab">
+               <img class="img-responsive" src="images/backpain2.png" align="center"><br> <br>
+              Four out of five adults will experience at least one bout of back pain at some time in their lives. Structurally backache is a condition that usually is caused when one or more structures of the back gets affected and these includes muscles, cartilage, bones or spinal cord.
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="causes2" aria-labelledBy="causes2-tab">
+             Triggering Factors -The episode of back ache might result either from a strenuous event or previous history. Even psycho-social risk factors like stress, distress, anxiety, depression, cognitive functioning, job dissatisfaction and mental stress can play a role in triggering back ache. There may be some deep underlying causes of low back pain, few of which include:<br><br>
+              Fracture of vertebral bones. <br><br>
+              Slipped disc; disc bulges out of vertebral joint and puts pressure on spinal nerves. <br><br>
+              Spinal stenosis; owing to narrowing of spinal space,pressure is induced upon the spinal nerves.<br><br>
+              Spondylolithesis; when one of the back bones slips forward and out of position.<br><br>
+              Degenerative disc disease; when the discs in spinal cord gradually gets worn out.<br><br>
+              Osteoarthritis; a wear-and-tear disease of bones.<br><br>
+              Rheumatoid arthritis; an inflammatory condition of joints.<br><br>
+              Carcinoma or benign tumors.<br><br>
+              Kidney stones.<br><br>
+              Endometriosis.<br><br>
+              Pelvic inflammatory disease in females. <br><br>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="symptoms2" aria-labelledBy="symptoms2-tab">
+                  <b>Category of Pain:</b><br> <br>
+              Acute - if lasting up to six weeks <br> <br>
+              Sub-acute - If lasting up to three months <br> <br>
+              Chronic - If longer than three months <br> <br>
+              Warning Signs when medical help is required:<br> <br>
+              Pain getting significantly worse<br> <br>
+              Pain affecting every day activities<br> <br>
+              Groin weakness or numbness<br> <br>
+              Weakness or numbness in one or both the legs<br> <br>
+              Arm or hand weakness<br> <br>
+              Tingling, or numbness in arms radiating to fingers<br> <br>
+              Loss of bowel or bladder control<br> <br>
+             A fever (high temperature) accompanied with redness or swelling on back 
+              Constant pain, even at night<br> <br>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="prevention2" aria-labelledBy="prevention2-tab">
+                  <img class="img-responsive" src="images/backpain3.png" align="center"><br> <br>
+              Stay active and perform all the daily activities normally<br> <br>
+              Avoid bed rest for extended periods as it might make low back pain worse <br> <br>
+              Apply hot pack to the affected area if pain is chronic or cold packs if pain is acute. Traction for Back Pain – This has been the mainstay of treatment for back pain in the past. <br> <br>
+              Electrical Stimulation:<br> <br>
+              Transcutaneous electrical nerve stimulation (TENS) may help stop pain by blocking nerve signals from reaching your brain. A physical therapist places electrodes on your skin near the area of your pain. TENS may relieve pain in your leg due to inflammation or compression of nerves in your back.
+              This treatment involves manipulation and massage of your spine and back muscles to relieve mild-to-moderate pain.<br> <br>
+             Acupuncture:An acupuncturist inserts hair-thin needles under your skin. The needles usually stay in for 15 to 30 minutes. The insertion causes little or no pain. Expect to have several sessions. Research suggests pain relief may come from the release of endorphins, your body's natural painkillers.<br> <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+           
+    <tr id="cdis">
+      </tr>
+    <tr class="success" data-toggle="collapse" data-target="#commoncold">
+      <td>Common Cold</td>
+    </tr>
+    <tr>
+        <td colspan="5">
+          <div class="collapse" id="commoncold">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+            <div class="panel-heading" align="center" style="background-color:#41a9d7; color:#ffffff">Common Cold
+            </div>
+            <br>
+            <div role="tabpanel" style="margin-left:10px">
+              <ul id="ulasthma" class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#about3" id="about3-tab" role="tab" data-toggle="tab" aria-controls="about3" aria-expanded="true">ABOUT</a></li>
+                <li role="presentation"><a href="#causes3" id="causes3-tab" role="tab" data-toggle="tab" aria-controls="causes3" aria-expanded="true">CAUSES</a></li>
+                <li role="presentation"><a href="#symptoms3" id="symptoms3-tab" role="tab" data-toggle="tab" aria-controls="symptoms3" aria-expanded="true">SYMPTOMS</a></li>
+               <li role="presentation"><a href="#prevention3" id="prevention3-tab" role="tab" data-toggle="tab" aria-controls="prevention3" aria-expanded="true">PREVENTION</a></li>
+              </ul>
+              <br>
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="about3" aria-labelledBy="about3-tab">
+               <img class="img-responsive" src="images/commoncold1.png" align="center"><br> <br>
+              Cold is an illness that is short in duration, usually less than two weeks, does not usually produce fever, except in children. It is most prevalent among children, and seem to be related to youngsters' relative lack of resistance to infection and to contacts with other children in schools. The common cold causes irritation and drainage in any or all of the airways including the nose, sinuses, throat, voice box, and often the bronchial tubes.
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="causes3" aria-labelledBy="causes3-tab">
+             Depending on the virus type, any or all of the following routes of transmission may be common:<br> <br>
+              Touching infectious respiratory secretions on skin or personal objects which have been contaminated by the patient. <br> <br>
+              Inhaling relatively large particles of respiratory secretions transported briefly in the air.<br> <br>
+              Inhaling droplets, smaller infectious particles from coughing or sneezing by patients suffering from cold.<br> <br>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="symptoms3" aria-labelledBy="symptoms3-tab">
+                 <img class="img-responsive" src="images/commoncold.png" align="center"><br> <br>
+              Sore throat. <br> <br>
+              Running nose or Leaky nose.<br> <br>
+              Sneezing and cough. <br> <br>
+              Nasal congestion.<br> <br>
+              Headache and body pain. <br> <br>
+              Low grade fever (more likely in infants and young children).<br> <br>
+              Green or yellow sputum or nasal secretions suggest a secondary bacterial infections of the middle ear or sinusitis requiring treatment with antibiotics. Cold symptoms can last from two to 14 days, but two-thirds of people recover in a week. If symptoms occur often or last much longer than two weeks, with high fever, significantly swollen glands, severe facial pain in the sinuses, and a cough that produces mucus, it indicates a complication or more serious illness requiring a doctor's attention.<br> <br>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="prevention3" aria-labelledBy="prevention3-tab">
+                  <img class="img-responsive" src="images/commoncold2.png" align="center"><br> <br>
+           Infection of cold disappears within seven to ten days. Usually, common cold does not require any treatment. But, if the symptoms continue, or if certain pre-existing respiratory condition become worse, it indicates the involvement of bacteria in addition to the virus. In such condition antibiotics might have to be administrated to improve the condition. Only symptomatic treatment is available for uncomplicated cases of the common cold: bed rest, plenty of fluids, gargling with warm salt water, petroleum jelly for a raw nose, and aspirin or acetaminophen to relieve headache or fever.
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+           
+	<tr id="ddis">
+    </tr>
+  <tr class="success" data-toggle="collapse" data-target="#diabetes">
+    <td>Diabetes</td>
+  </tr>
+  <tr>
+        <td colspan="5">
+          <div class="collapse" id="diabetes">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+            <div class="panel-heading" align="center" style="background-color:#41a9d7; color:#ffffff">Diabetes
+            </div>
+            <br>
+            <div role="tabpanel" style="margin-left:10px">
+              <ul id="ulasthma" class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#about4" id="about4-tab" role="tab" data-toggle="tab" aria-controls="about4" aria-expanded="true">ABOUT</a></li>
+                <li role="presentation"><a href="#causes4" id="causes4-tab" role="tab" data-toggle="tab" aria-controls="causes4" aria-expanded="true">CAUSES</a></li>
+                <li role="presentation"><a href="#symptoms4" id="symptoms4-tab" role="tab" data-toggle="tab" aria-controls="symptoms4" aria-expanded="true">SYMPTOMS</a></li>
+               <li role="presentation"><a href="#prevention4" id="prevention4-tab" role="tab" data-toggle="tab" aria-controls="prevention3" aria-expanded="true">PREVENTION</a></li>
+              </ul>
+              <br>
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="about4" aria-labelledBy="about4-tab">
+               In diabetes, lack of insulin or the resistance of your cells to insulin prevents the right amount of glucose from entering your cells. The unused glucose builds up in your blood, a condition called hyperglycemia.
+            The disease occurs in two types: <br><br>
+            <b>Type 1 diabetes:</b> This is the type of diabetes that generally affects young people and requires treatment with insulin.<br> <br>
+            <b>Type 2 diabetes:</b> This type of diabetes generally develops after age 40. Diabetes can develop gradually, often without symptoms, over many years. <br><br><br>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="causes4" aria-labelledBy="causes4-tab">
+             <b>Type 1 Diabetes:</b><br><br> This type of diabetes is an autoimmune disease. Your immune system turns on itself and destroys the insulin-producing cells in your pancreas.It usually develops in childhood or teen years, it can appear later.<br><br>
+              <b>Causes:</b><br><br>
+              Viral or bacterial infection<br><br>
+              Chemical toxins within food<br><br>
+              <b>Type 2 Diabetes:</b> <br><br>In this type, your pancreas makes some insulin, but not enough. Your cells also can become resistant to insulin's effects, keeping insulin from escorting enough glucose into your body's cells.<br><br>
+              <b>Causes:</b><br><br>
+              Obesity<br><br>
+              <img class="img-responsive" src="images/diabetes.png" align="center"><br> <br>
+              Living a sedentary lifestyle<br><br>
+              Increasing age<br><br>
+              Bad diet<br><br>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="symptoms4" aria-labelledBy="symptoms4-tab">
+               <img class="img-responsive" src="images/diabetes1.png" align="center"><br> <br>
+              <b>Extreme thirst - </b>The process of dehydration makes you thirsty.<br><br><b>Blurry vision - </b>High blood sugar may cause new blood vessels to form and may damage old blood vessels on the retina at the back of your eye.
+              <br><br>
+              <b>Weight loss - </b>To make up for the lost fuel, your body burns fat reserves, and you may lose weight.<br><br>
+              <b>Fatigue - </b>When your cells don't get enough glucose, their primary fuel source, fatigue results.<br><br>
+              <b>Hunger - </b>Burning of fat reserves also may make you hungry. <br>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="prevention4" aria-labelledBy="prevention4-tab">
+                <img class="img-responsive" src="images/diabetes2.png" align="center"><br> <br>
+              Controlling blood sugar is the single most important thing you can do to prevent long-term complications of diabetes. <br> <br>
+              For type 1 diabetes, you must take insulin. Today, most people use synthetic insulin, which is chemically identical to human insulin.<br> <br>
+              If you have type 2 diabetes, you may be able to control your blood sugar with weight control, diet and exercise. Or, you may need to combine these approaches with medication.<br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+	</tbody>
+	</table>
+</div>
+
+<br><br><br>
+<nav style="background-color:#212c37" class="navbar navbar-default navbar-bottom">
+<style type="text/css">
+  div div div ul li a{
+    color:#3b91b5;
+    font-size: 14px;
+  }
+  div div div ul li a span.glyphicon{
+    font-size: 0.6em;
+  }
+  </style>
+  <div class="container" >
+  <div class="row">
+    <div class="col-sm-4">
+    <ul>
+      <h3 style="color:white" >About Us </h3>
+      <li style="display:block"><a href="#"  title="Team"><span class="glyphicon glyphicon-triangle-right"></span>Team</a></li><br>
+      <li style="display:block"><a href="#" title=""><span class="glyphicon glyphicon-triangle-right"></span>At a Glance</a></li><br>
+      <li style="display:block"><a href="#" title=""><span class="glyphicon glyphicon-triangle-right"></span>Privacy Policy</a></li><br>
+      <li style="display:block"><a href="#" title=""><span class="glyphicon glyphicon-triangle-right"></span>FeedBack</a></li>
+    </ul>
+    </div>  
+    <div class="col-sm-4">
+    <ul >
+       <h3  style="color:white">Links</h3>  
+        <li style="display:block"><a href="" title="Diseases"><span class="glyphicon glyphicon-triangle-right"></span>Diseases</a></li><br>
+         <li style="display:block"><a href="medicine" title="Medicines"><span class="glyphicon glyphicon-triangle-right"></span>Medicines</a></li><br>
+        <li style="display:block"><a href="forum" title="Forum"><span class="glyphicon glyphicon-triangle-right"></span>Forum</a></li><br>
+        <li style="display:block"><a href="news" title="News"><span class="glyphicon glyphicon-triangle-right"></span>News</a></li><br>
+        <li style="display:block"><a href="doctor" title="Doctor"><span class="glyphicon glyphicon-triangle-right"></span>Doctors</a></li>
+        
+      </ul>
+    </div>
+   
+    <div class="col-sm-4">
+    <ul>
+      <h3 style="color:white">Contact Us</h3>
+      <li style="display:block">
+        <address style="color:#a2dcf4; font-size:14px">
+          <span style="font-size:1em" class="glyphicon glyphicon-map-marker"></span><strong style="font-size:14px">Address: </strong>Shshsh, Inc.<br>
+          123 abc, xyz 600<br>
+          Dkjdkd jdkjskf, indore 452005<br>
+        </address>
+      </li>
+      <li style="display:block">
+        <address style="color:#a2dcf4; font-size:14px">
+          <span style="font-size:1em" class="glyphicon glyphicon-envelope"></span><strong style="font-size:14px"> Email: </strong><a href="mailto:#">shshsh@gmail.com</a>
+        </address>
+      </li>
+      <li style="display:block">
+        <address style="color:#a2dcf4; font-size:14px">
+          <span style="font-size:1em" class="glyphicon glyphicon-phone-alt"></span><strong style="font-size:14px"> Phone: </strong> (123) 456-7890
+        </address>
+      </li>
+      <li style="display:inline"><strong style="font-size:14px; color:#a2dcf4"> Follow us: </strong></li>
+        <li style="display:inline"><a href="#" title="facebook"><img   class="" src="images/fbicon1.png" onmouseover="this.src='images/fbicon2.png'" onmouseout="this.src='images/fbicon1.png'"></a></li>
+         <li style="display:inline"><a href="#" title="twitter"><img class="" src="images/twicon1.png" onmouseover="this.src='images/twicon2.png'" onmouseout="this.src='images/twicon1.png'"></a></li>
+        <li style="display:inline"><a href="#" title="linkedin"><img class="" src="images/liicon1.png" onmouseover="this.src='images/liicon2.png'" onmouseout="this.src='images/liicon1.png'"></a></li>
+        <li style="display:inline"><a href="#" title="google+"><img class="" src="images/goicon1.png" alt="g+" onmouseover="this.src='images/goicon2.png'" onmouseout="this.src='images/goicon1.png'"></a></li>
+      
+    </ul>
+
+  </div>
+  </div>
+  <div class="row">
+  <blockquote class="blockquote col-sm-6" style="color:white">
+  <p><span class="glyphicon glyphicon-pencil"></span> Created By: </p>
+  <footer><cite title="Sharlet Shivani Shubham">Shshsh Organization</cite></footer>
+</blockquote>
+  <blockquote class="blockquote-reverse col-sm-6" style="color:white">
+  <p><span class="glyphicon glyphicon-copyright-mark"></span> Copyright 2015.All Right Reserved. </p>
+  <footer>by<cite title="Sharlet Shivani Shubham">Shshsh Organization</cite></footer>
+</blockquote>
+  </div>
+  </div>
+</nav>
+  <p id="back-top">
+    <a class="pull-right" href="#top"><span aria-hidden="true"><img class="img-circle pull-right" alt="back-to-top" title="back to top" src="images/up-arrow.png"></span></a>
+  </p>
+	
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login/signin" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" >
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">
+                       &times;
+                </button>
+                <h1 class="modal-title" style="text-align:center;color:#4496d2"id="Login"><strong>Login</strong></h1>
+        </div>
+         <form method="POST" action="/login">
+        <div class="modal-body">
+               
+          <div class="form-group">
+            <label for="user-name" class="control-label">UserName:</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="UserName" required>
+          </div>
+          <div class="form-group">
+            <label for="password" class="control-label">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+          </div>
+        
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Log In</button>
+        <a  href="/forgot" class="btn btn-link" >forgot password?</a>
+      </div>
+      </form>
+      <hr style="color:#4496d2">
+      <div >
+      <p style="text-align:center">Don't have an account? <a data-toggle="modal" data-target="#signup" data-dismiss="modal"><strong>Sign Up</strong></a></p>
+    </div>
+
+        </div>
+      </div>
+  </div>
+  
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signup" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h1 class="modal-title" style="text-align:center;color:#4496d2" id="exampleModalLabel"><strong>Sign Up</strong></h1>
+      </div>
+       <form action="/User" method="POST">
+      <div class="modal-body">
+       
+          <div class="form-group">
+            <label for="user-name" class="control-label">UserName:</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="Email" class="control-label">Email:</label>
+            <input type="email" name="email"class="form-control" id="email" required>
+          </div>
+          
+
+          <div class="form-group">
+            <label for="message-text" class="control-label">Password:</label>
+            <input type="password" name="password"class="form-control" id="password" required>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Confirm-Password:</label>
+            <input type="password" name="cpassword"class="form-control" id="confirmpassword" required>
+          </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="close" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </div>
+    </form>    
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

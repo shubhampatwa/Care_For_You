@@ -1,0 +1,145 @@
+<!DOCTYPE html5>
+<html >
+<head>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>technical forum</title>
+<link rel="icon" type="image/iconx" href="logo.png">
+<link href="../bootstrap/css/bootstrap.css" rel="stylesheet"  type="text/css" />
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="../bootstrap/js/bootstrap.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+<style>
+#top{
+	padding:20px;
+}
+*{	
+color:#4496d2;
+font-size:18px;
+}
+</style>
+<nav id="top" class="navbar navbar-default navbar-fixed-top ">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand"style="color:#4492d2;font-size:40px" id="col" href="#">Technical forum</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a style="color:#4492d2;" href="shivani.html">home</a></li>
+        <li><a style="color:#4492d2;" href="#" >forum</a></li>
+        <li  class="dropdown">
+          <a style="color:#4492d2;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <form name="signin" action="#">
+            <li>name   :<input type="text" name="name" placeholder="name"/></li>
+            <li>password:<input type="password" name="pwd" placeholder="password"/></li>
+            <li><button type="submit" name="submit" onClick="onsignin()">Login</button>
+            </form>
+          </ul>
+        </li>
+        <li  class="dropdown">
+          <a style="color:#4492d2;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Signup <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+          <form id="form1" name="form1" method="" action="#">
+  <table width="336" border="2" align="left" cellpadding="2" cellspacing="0"  bgcolor="#CCCCCC">
+  <tr>
+  <th colspan="2" align="center" bgcolor="#3366CC"><h1><strong>Registration Page</strong></h1></th></tr>
+  
+    <tr>
+      <td width="174">Name :-</td>
+      <td width="146"><input type="text" name="uid" id="uid" />  </td>
+    </tr>
+    <tr>
+      <td>Age :-</td>
+      <td><input type="text" name="age" id="age" /></td>
+    </tr>
+    <tr>
+      <td>Address :-</td>
+      <td><input type="text" name="add" id="add" /></td>
+    </tr>
+    <tr>
+      <td>Phone no. :-</td>
+      <td><input type="text" name="no" id="no" /></td>
+    </tr>
+    <tr>
+      <td>User Name :-</td>
+      <td><input type="text" name="id" id="id" /></td>
+    </tr>
+    <tr>
+      <td>Password :-</td>
+      <td><input type="password" name="pwd" id="pwd" /></td>
+    </tr>
+    <tr>
+      <td>Confirm password:-</td>
+      <td><input type="password" name="cpwd" id="cpwd" /></td>
+    </tr>
+    <tr>
+      <td colspan=2>&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="login" id="login" value="Register" onclick="logincode()"  />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" name="reset" id="reset" value="Clear" /></td>
+      
+    </tr>
+  </table>
+</form>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+    
+  <div  class="divider"  style="color:#4496d2;"></div>
+  </div><!-- /.container-fluid -->
+
+</nav>
+
+<!--<div ><hr  style="border-color:#4492d2;border-width:3px;padding:80px" ></div>-->
+<script>
+function onsignin()
+{
+	if(signin.name.value==0)
+	{
+		alert("name is required");
+	}
+	if(signin.pwd.value==0)
+	{
+		alert("password is required");
+	}
+}
+function logincode()
+{
+if(form1.uid.value==0)
+alert("name is required");
+if(form1.age.value==0)
+alert("age is reqired");
+if(form1.age.value<0 ) 
+alert("age must be more than 0" );
+if(form1.add.value==0)
+alert("address is required");
+if(form1.pwd.value==0)
+alert("password is required");
+if(form1.cpwd.value==0)
+alert("confirmation of password is required");
+if(form1.pwd.value!=form1.cpwd.value)
+{
+alert("plz confirm password again");
+form1.pwd.value=null;
+form1.cpwd.value=null;
+}
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html5>
+<html >
+<head>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home|CARE FOR YOU</title>
+<link rel="icon" type="image/iconx" href="logo.png">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link type="text/css" href="../public/stylesheets/bootstrap.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="//cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
+<script type="text/javascript" src="../public/javascripts/bootstrap.js"></script>
+
+
+<!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+ <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" /> <link rel='stylesheet' href='/stylesheets/style.css' /> 
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<link href="stylesheets/bootstrap.css" rel="stylesheet"  type="text/css" />
+<link href="stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../bootstrap/css/bootstrap.css" rel="stylesheet"  type="text/css" />
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="javascripts/js/bootstrap.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="javascripts/jquery-1.11.0.min.js"></script>
+<script src="../../jquery-1.11.0.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+--></head>
+
+<body id="top1">
+<style>
+#try:hover
+{
+  background-color: #c0c0c0;
+}
+#top{
+  padding:24px;
+	background-color:;
+	outline:solid;
+	outline-width:3px;
+	outline-color:#4496d2;	
+}
+li:hover{
+  color:; 
+}
+
+.carousel-indicators li {
+  background-color: #11ffaa;
+}
+.carousel-indicators .active {
+  background-color: #4496d2;
+}
+.carousel-inner .item img,.active img{
+  height: 80%;
+  width: 100%;
+}
+.carousel img {
+      background-position: center;
+      background-size: cover;      
+      width: 100%;
+      height: 100%;
+    }
+#intro,#intro div img,div div divD0D0D0 img{-webkit-box-shadow: -5px 0px 10px 5px #D0D0D0,5px 0px 10px 5px #D0D0D0,0px 1px 0px 0px white;
+box-shadow: -5px 0px 10px 5px #D0D0D0,5px 0px 10px 5px #D0D0D0,0px 1px 0px 0px white;}
+*{	
+font-size:18px;
+}
+</style>
+<script type="text/javascript">
+$('document').ready(function(){
+$("input#cpassword").on({
+  keydown: function(e) {
+    if (password != cpassword)
+      return false;
+  });
+});
+  
+</script>
+<% if(myvar) {%>
+<script type="text/javascript">
+    var myvar=<%= myvar%>
+    if(myvar==1){
+     bootbox.alert("Question added sucessfully!!", function() {
+          Example.show("wait for answers");
+      });
+   }
+</script>
+<%}%>
+<nav id="top" class="navbar navbar-default navbar-fixed-top ">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar" style="background-color:#4496d2"></span>
+        <span class="icon-bar" style="background-color:#4496d2"></span>
+        <span class="icon-bar" style="background-color:#4496d2"></span>
+      </button>
+      <a class="navbar-brand"  style="color:#4492d2;font-size:40px" id="col" href="home.html"><img src="images/logo4.png" alt="Care For You" width="227" height="56"/></a>
+    
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	        
+      <form class="navbar-form navbar-nav" role="search">
+        <div class="form-group input-group">
+         <input style="color:#4492d2;"  type="text" class="form-control" placeholder="Search" >
+ 			
+ 		<span class="input-group-btn">    
+        <button class="btn btn-primary" type="submit">Go!</button>
+      </span>
+     </div>
+     <!--<button style="color:#4492d2;background-color:transparent;" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>-->
+        
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li  class="active"><a style="color:#4492d2;" href="home.html">Home</a></li>
+        <li   ><a style="color:#4492d2;" href="diseases.html">Diseases</a></li>
+        <li ><a style="color:#4492d2;" href="medicine.html" >Medicine</a></li>
+        <li><a style="color:#4492d2;" href="/forum">Forum</a></li>
+        <li><a style="color:#4492d2;" href="news.html">News</a></li>
+        <li ><a style="color:#4492d2;" href="doctor.html">Doctors</a></li>
+        
+        <li  class="dropdown">
+          <a style="color:#4492d2;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a style="color:#4492d2;" href="#">Quiz</a></li>
+            <li style="color:#4492d2;" class="divider"></li>
+            <li><a style="color:#4492d2;" href="#">Details</a></li>
+            <li style="color:#4492d2;" class="divider"></li>
+            <li><a style="color:#4492d2;" href="#">About Us</a></li>
+            <li style="color:#4492d2;" class="divider"></li>
+            <li><a  style="color:#4492d2;" href="#">Got It</a></li>
+          </ul>
+        </li>
+        <li><a style="color:#4496d2;" href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<br><br>
+
+
+<!--<div ><hr  style="border-color:#4492d2;border-width:3px;padding:80px" ></div>-->
+
+
+<!--<ol style="padding-top:100px" class="breadcrumb">
+  <li><a href="#" class="active">Home</a></li>
+  <li><a href="#">Library</a></li>
+<!--  <li class="active">Data</li>
+</ol>-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+<!--indicator-->
+
+<ol class="carousel-indicators">
+	<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+	<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+  <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+  <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+  <li data-target="#carousel-example-generic" data-slide-to="7"></li>
+  <li data-target="#carousel-example-generic" data-slide-to="8"></li>
+</ol>
+<!--wrapper-->
+<div class="carousel-inner " role="listbox">
+	<div class="item active" >
+    <img src="images/first.png"  alt="care for you"/>
+    <div class="carousel-caption">
+    	<p></p>
+    </div>
+    </div>
+    <div class="item">
+    <img id="img" src="images/second.png"  alt="care for you"/>
+    <div class="carousel-caption">
+    	<p></p>
+    </div>
+    </div>
+    <div class="item">
+    <img src="images/diseases2.png" alt="care of you"/>
+    <div class="carousel-caption">
+    	<p></p>
+    </div>
+    </div>
+    <div class="item">
+    <img src="images/medicine5.png"/>
+    <div class="carousel-caption">
+      <p></p>
+    </div>
+    </div>
+    <div class="item">
+    <img src="images/forum3.png"/>
+    <div class="carousel-caption">
+      <p></p>
+    </div>
+    </div>
+    <div class="item">
+    <img src="images/news2.png"/>
+    <div class="carousel-caption">
+      <p></p>
+    </div>
+    </div>
+    <div class="item">
+    <img src="images/doctor2.png"/>
+    <div class="carousel-caption">
+      <div class="container">
+        <div class="col-sm-3" style="color:#000000;">
+         <h1>hello I'm doctor</h1>
+         <p>im here to help u if u want the help.
+         u can contact me any time but for any serives u must sign up</p>
+          <button class ="btn btn-primary" style="color:#ffffff;"  data-toggle="modal"  data-target="#signup" data-dismiss="modal"><strong>Sign Up</strong>
+          </button>
+           
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="item">
+    <img src="images/quiz2.png"/>
+    <div class="carousel-caption">
+      <p></p>
+    </div>
+    </div>
+    <div  class="item embed-responsive embed-responsive-16by9">
+    <iframe src="videos/_Subhanallah Yeh Jawaani Hai Deewani_ Latest Video Song _ Ranbir Kapoor, Deepika Padukone.mp" width="100%" height="100%" loop="1" controls="1" autohide="1" ></iframe>
+  
+   <!-- <img src="River Front Hd_40.jpg" alt="sharlet"/>-->
+    <div class="carousel-caption">
+    	<p><h1>click to view </h1></p>
+    </div>
+    </div>
+</div>    
+<!-- control-->
+<div class="carousel-control left" href="#carousel-example-generic" role="button" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 
+<span class="sr-only" >previous</span>
+</div>
+<div class="carousel-control right" href="#carousel-example-generic" role="button" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> 
+<span class="sr-only" >next</span>
+</div>
+</div>
+<div class="container" id="intro" style="">
+  <!--<div class="jumbotron" style="background-image:url(background_home_1.png)">
+    <h1 align="center" >Welcome to Care For You</h1>
+    
+  </div>-->
+<h2 align="center" >Welcome to Care For You</h2>
+  <div class="row" >
+  <div class="col-sm-1" ></div>
+    <div class="col-sm-5" style="background-color:;">
+      <h3 align="center"><b>Diseases</b></h3>
+      <div class="col-sm-6" align="center"><img class="img-responsive img-circle img-thumbnail" src="images/diseases1.png" alt="Diseases"></div>
+      <div class="col-sm-6"><p >This contain details about the <b>Diseases</b> <span style="color:#4496d2" ><a href="diseases.html">know more about Diseases</a></span>
+      </p></div>
+    </div>
+    <div class="col-sm-5" style="background-color:">
+     <h3 align="center"><b>Medicines</b></h3>
+      <div class="col-sm-6" align="center"><img class="img-responsive img-circle img-thumbnail" src="images/medicine1.png" alt="Diseases"></div>
+      <div class="col-sm-6"><p >This contain details about the <b>Medicines </b><span style="color:#4496d2" ><a href="medicine.html">know more about Medicines</a></span>
+      </p>
+      </div>   
+     </div>
+    <div class="col-sm-1"></div>
+  
+     </div>
+<div class="row">
+  <div class="col-sm-1"></div>
+    <div class="col-sm-5" style="background-color:">
+      <h3 align="center"><b>Doctors</b></h3>
+      <div class="col-sm-6" align="center"><img class="img-responsive img-circle img-thumbnail" src="images/doctor1.png" alt="Doctors"></div>
+      <div class="col-sm-6"><p >This contain details about the <b>Doctors</b> <span style="color:#4496d2" ><a href="doctor.html">know more about Doctors</a></span>
+      </p></div>
+    </div>
+    <div class="col-sm-5" style="background-color:">
+     <h3 align="center"><b>News</b></h3>
+      <div class="col-sm-6" align="center"><img class="img-responsive img-circle img-thumbnail" src="images/news1.png" alt="News"></div>
+      <div class="col-sm-6"><p >This contain details about the <b>News </b><span style="color:#4496d2" ><a href="news.html">know more about News</a></span>
+      </p>
+      </div>   
+     </div>
+    <div class="col-sm-1"></div>
+  
+     </div>
+<div class="row">
+  <div class="col-sm-1"></div>
+    <div id="try"class="col-sm-5" style="background-color:;">
+      <h3 align="center"><b>Forum</b></h3>
+      <div class="col-sm-6" align="center"><img class="img-responsive img-circle img-thumbnail" src="images/forum1.png" alt="forum"></div>
+      <div class="col-sm-6"><p >This contain details about the <b>Forum</b> <span style="color:#4496d2" ><a href="forum.html"> know more about Forum </a></span>
+      </p></div>
+    </div>
+    <div id="try" class="col-sm-5" style="background-color:">
+     <h3 align="center"><b>Quiz</b></h3>
+      <div class="col-sm-6" align="center"><img class="img-responsive img-circle img-thumbnail" src="images/quiz1.png" alt="Quiz"></div>
+      <div class="col-sm-6"><p >This contain details about the <b>Quiz </b><span style="color:#4496d2" ><a href="quiz.html">know more about Quiz</a></span>
+      </p>
+      </div>   
+     </div>
+    <div class="col-sm-1"></div>
+  
+     </div>
+
+</div>
+<br><br><br>
+<nav class="navbar navbar-default navbar-bottom">
+
+  <div class="container" style="background-color:#212c37" >
+  <div class="row">
+    <div class="col-sm-3">
+      <ul >
+        <li style="display:inline"><a href="#" title="facebook"><img class="" src="images/facebook2.png"></a></li>
+         <li style="display:inline"><a href="#" title="twitter"><img class="" src="images/twitter1.png"></a></li>
+        <li style="display:inline"><a href="#" title="instagram"><img class="" src="images/instagram1.png"></a></li>
+        <li style="display:inline"><a href="#" title="linkelin"><img class="" src="images/linkedin1.png"></a></li>
+       	<li style="display:inline"><a href="#" title="google+"><img class="" src="images/google1.png" alt="g+"></a></li>
+       	
+      </ul>
+    </div>  
+    <div class="col-sm-3"><ul >
+        <li style="display:inline"><a href="#" title="facebook"><img class="" src="facebook2.png"></a></li>
+         <li style="display:inline"><a href="#" title="twitter"><img class="" src="twitter1.png"></a></li>
+        <li style="display:inline"><a href="#" title="instagarm"><img class="" src="instagram1.png"></a></li>
+        <li style="display:inline"><a href="#" title="linkelin"><img class="" src="linkedin1.png"></a></li>
+       	<li style="display:inline"><a href="#" title="google+"><img class="" src="google1.png" alt="g+"></a></li>
+       	
+      </ul></div>
+    <div class="col-sm-3"><ul >
+        <li style="display:inline"><a href="#" title="facebook"><img class="" src="facebook2.png"></a></li>
+         <li style="display:inline"><a href="#" title="twitter"><img class="" src="twitter1.png"></a></li>
+        <li style="display:inline"><a href="#" title="instagarm"><img class="" src="instagram1.png"></a></li>
+        <li style="display:inline"><a href="#" title="linkelin"><img class="" src="linkedin1.png"></a></li>
+       	<li style="display:inline"><a href="#" title="google+"><img class="" src="google1.png" alt="g+"></a></li>
+       	
+      </ul></div>
+    <div class="col-sm-3" style="color:white">
+        <address>
+  <strong>Twitter, Inc.</strong><br>
+  795 Folsom Ave, Suite 600<br>
+  San Francisco, CA 94107<br>
+  <abbr title="Phone">P:</abbr> (123) 456-7890
+</address>
+
+<address>
+  <strong>Full Name</strong><br>
+  <a href="mailto:#">shshsh@shshsh.com</a>
+</address>
+  </div>
+  </div>
+  <div class="row">
+  <blockquote class="blockquote-reverse" style="color:white">
+  <p><span class="glyphicon glyphicon-copyright-mark"></span> Copyright 2015.All Right Reserved. </p>
+  <footer>by<cite title="Shshsh">Shshsh Organization</cite></footer>
+</blockquote>
+  </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login/signin" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" >
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">
+                       &times;
+                </button>
+                <h1 class="modal-title" style="text-align:center;color:#4496d2"id="Login"><strong>Login</strong></h1>
+        </div>
+         <form method="POST" action="/user">
+        <div class="modal-body">
+               
+          <div class="form-group">
+            <label for="user-name" class="control-label">UserName:</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="UserName" required>
+          </div>
+          <div class="form-group">
+            <label for="password" class="control-label">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+          </div>
+        
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Log In</button>
+      </div>
+      </form>
+      <hr style="color:#4496d2">
+      <div >
+      <p style="text-align:center">Don't have an account? <a data-toggle="modal" data-target="#signup" data-dismiss="modal"><strong>Sign Up</strong></a></p>
+    </div>
+
+        </div>
+      </div>
+  </div>
+  
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signup" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h1 class="modal-title" style="text-align:center;color:#4496d2" id="exampleModalLabel"><strong>Sign Up</strong></h1>
+      </div>
+       <form action="/newuser" method="POST">
+      <div class="modal-body">
+       
+          <div class="form-group">
+            <label for="user-name" class="control-label">UserName:</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="first-name" class="control-label">FirstName:</label>
+            <input type="text" name="firstname"class="form-control" id="firstname" required>
+          </div>
+          <div class="form-group">
+            <label for="last-name" class="control-label">LastName:</label>
+            <input type="text" name="lastname" class="form-control" id="lastname" required>
+          </div>
+
+
+          <div class="form-group">
+            <label for="message-text" class="control-label">Password:</label>
+            <input type="password" name="password"class="form-control" id="password" required>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Confirm-Password:</label>
+            <input type="password" name="cpassword"class="form-control" id="confirmpassword" required>
+          </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="close" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </div>
+    </form>    
+    </div>
+  </div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#login,#signup').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+});
+  $("input#username").on({
+  keydown: function(e) {
+    if (e.which === 32)
+      return false;
+  },
+  change: function() {
+    this.value = this.value.replace(/\s/g, "");
+  }
+});
+$("input#password").on({
+  keydown: function(e) {
+    if (e.which === 32)
+      return false;
+  },
+  change: function() {
+    this.value = this.value.replace(/\s/g, "");
+  }
+});  
+  });
+  $(document).ready(function(){
+    $('#close').click(function () {
+  $('#img').css({"width":"100%"});
+});
+  });
+</script>
+
+</body>
+</html>
