@@ -1,4 +1,4 @@
-# careforyou
-healthcare system
-this is a medical web application 
-this uses nodejs bootstrap mongodb
+सितम ढाने की हद होती है,
+पास ना आने की रूठ जाने की हद होती है,
+एक SMS तो कर दे जालिम,
+पैसे बचाने की भी हद होती है!
